@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*This stylesheet sets the width of all images to 100%: */
+img {
+    width:100%;
+}
+</style>
+</head>
+<body>
+
+
+
+<p>The image below has the following parameters:</p>
+<p>mean size = {{ means }}</p>
+<p>stdev = {{ stdev }}</p>
+<p>kurtosis = {{ kuto }}</p>
+<img src="{{ image }}" style="width:500px;height:500px;">
+
+</body>
+</html>

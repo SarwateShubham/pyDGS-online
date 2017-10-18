@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Grain Size Online!</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/app.css') }}">
+  Digital Grain Size Online!
+</head>
+
+<body>
+<header class="navbar">
+  <form action="/upload" method="post" enctype="multipart/form-data" >
+    <div>
+    <span class="btn btn-default btn-file">
+        Select the sample image <input type="file" name="image">
+    </span>
+    </div>
+
+    <div>
+    <input type="submit" value="Process the image" class="btn btn-primary">
+    </div>
+  </form>
+</header>
+
+</body>
+</html>
