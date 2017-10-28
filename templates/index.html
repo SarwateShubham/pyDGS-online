@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
 <head>
   <meta charset="UTF-8">
   <title>Digital Grain Size Online!</title>
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/app.css') }}">
-  Digital Grain Size Online!
+  <h1>Digital Grain Size Online!</h1>
 </head>
 
 <body>
@@ -12,8 +49,20 @@
   <form action="/upload" method="post" enctype="multipart/form-data" >
     <div>
     <span class="btn btn-default btn-file">
-        Select the sample image <input type="file" name="image">
+        Select the sample image <input type="file" name="image"><br>
+        <br>
+        
     </span>
+    Resolution(mm/pixel) :  <input type="text" name="resolution" value = 1><br>
+    <br>
+    Processing Density :  <input type="text" name="density" value = 10><br>
+    <br>
+    Filer image (1/0) :  <input type="text" name="dofilter" value = 1><br>
+    <br>
+    Notes per octave :  <input type="text" name="notes" value = 8><br>
+    <br>
+    Max scale(inverse fraction of data length) :  <input type="text" name="maxscale" value = 8><br>
+    <br>
     </div>
 
     <div>
