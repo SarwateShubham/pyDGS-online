@@ -1,4 +1,4 @@
-BzrTools==2.6.0
+BzrTools
 Flask==0.12.2
 Jinja2==2.9.6
 MarkupSafe==1.0
@@ -6,6 +6,7 @@ Pillow==2.3.0
 SecretStorage==2.0.0
 Werkzeug==0.12.2
 argparse==1.2.1
+bzr==2.7.0dev1
 chardet==2.0.1
 click==6.7
 colorama==0.2.5
