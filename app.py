@@ -48,6 +48,8 @@ def upload_file():
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.bar(x,y,align='center',width=20)
+    # fig.xlabel('Grain Size (mm)')
+    # fig.ylabel('Grain Size Frequency' )
     fig.savefig('./static/test.png')
     bar_chart= './static/test.png'
     
