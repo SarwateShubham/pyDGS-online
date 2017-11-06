@@ -1,8 +1,8 @@
 # pyDGS-online
 
-pyDGS-online - a web based framework for wavelet-based digital grain size analysis of [pyDGS](https://github.com/dbuscombe-usgs/pyDGS)
+pyDGS-online - a web based framework for wavelet-based digital grain size analysis.
 
-pyDGS is an open-source project dedicated to provide a Python framework to compute estimates of grain size distribution  using the continuous wavelet transform method of Buscombe (2013) from an image of sediment where grains are clearly resolved. DOES NOT REQUIRE CALIBRATION
+[pyDGS](https://github.com/dbuscombe-usgs/pyDGS) is an open-source project dedicated to provide a Python framework to compute estimates of grain size distribution  using the continuous wavelet transform method of Buscombe (2013) from an image of sediment where grains are clearly resolved. DOES NOT REQUIRE CALIBRATION
 
 This program implements the algorithm of:
 
