@@ -47,12 +47,12 @@ def upload_file():
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.bar(x,y,align='center',width=20)
-    # fig.xlabel('Grain Size (mm)')
-    # fig.ylabel('Grain Size Frequency' )
+    ax.bar(x,y,align='center',width=14)
+    ax.set_xlabel('Grain Size (mm)')
+    ax.set_ylabel('Grain Size Frequency' )
     fig.savefig('./static/test.png')
     bar_chart= './static/test.png'
     
     return render_template('output.html',means=means,image=image,stdev=stdev,kuto=kuto,bar_chart=bar_chart)
     
-app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
+app.run(host='0.0.0.0',debug=False)
