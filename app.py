@@ -29,30 +29,34 @@ def upload_file():
     density = request.form['density']
     dofilter=request.form['dofilter']
     maxscale=request.form['maxscale']
+    mag=int(request.form['mag_he'])
+    print request.form['mag_he']
     notes=request.form['notes']
     ans =  DGS.dgs(image, density, resolution, dofilter, maxscale, notes,1)
     print ans
-    means=ans['mean grain size']
+    means=ans['mean grain size']*mag
     kuto = ans['grain size kurtosis']
-    stdev = ans['grain size skewness']
-    
+    stdev = ans['grain size skewness']*mag
+
     
     y=ans['grain size frequencies']
-    x=ans['grain size bins']
+    x=ans['grain size bins']*mag
     for num in range(len(y)):
         y[num] *= 100
-    
+    for num in range(len(x)):
+        x[num] *= mag
+    print x
 
     
-
+    
     fig = plt.figure()
     ax = fig.add_subplot(111)
-    ax.bar(x,y,align='center',width=20)
-    # fig.xlabel('Grain Size (mm)')
-    # fig.ylabel('Grain Size Frequency' )
+    ax.bar(x,y,align='center',width=means)
+    ax.set_xlabel('Grain Size (mm)')
+    ax.set_ylabel('Grain Size Frequency' )
     fig.savefig('./static/test.png')
     bar_chart= './static/test.png'
     
     return render_template('output.html',means=means,image=image,stdev=stdev,kuto=kuto,bar_chart=bar_chart)
     
-app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
+app.run(host='0.0.0.0')
