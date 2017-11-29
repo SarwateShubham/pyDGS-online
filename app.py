@@ -59,4 +59,5 @@ def upload_file():
     
     return render_template('output.html',means=means,image=image,stdev=stdev,kuto=kuto,bar_chart=bar_chart)
     
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0',debug=False)
+
